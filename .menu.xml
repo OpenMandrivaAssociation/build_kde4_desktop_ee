@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<menu_config>
+    <welcome_message>
+        Welcome to
+    </welcome_message>
+    <product_name>
+	ROSA 2012 MARATHON (public beta)
+    </product_name>
+  <item name="Launch system">
+    vga=788
+    desktop
+    nopat
+    rd_NO_LUKS
+    rd_NO_MD
+    noiswmd
+    splash=silent
+    logo.nologo
+    nomodeset
+  </item>                                              
+  <item name="Install system">
+    vga=788
+    desktop
+    nopat
+    rd_NO_LUKS
+    rd_NO_MD
+    noiswmd
+    splash=silent
+    install
+    logo.nologo
+    nomodeset
+    install
+ </item>
+ <item name="Check Disk">
+     md5
+ </item>                                         
+  <background_img_path>
+	./welcome.jpg
+  </background_img_path>
+  <font_path>
+    ./cyra8x16.psf
+  </font_path>
+</menu_config>

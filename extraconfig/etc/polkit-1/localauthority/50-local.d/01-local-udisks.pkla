@@ -1,0 +1,8 @@
+[Mount a system-internal device]
+Identity=*
+Action=org.freedesktop.udisks.filesystem-mount-system-internal
+ResultActive=yes[Mount Permissions for users]
+Action=org.freedesktop.udisks.filesystem-mount;org.freedesktop.udisks.drive-eject
+ResultAny=yes
+ResultInactive=no
+ResultActive=yes
