@@ -4,7 +4,7 @@
         Welcome to
     </welcome_message>
     <product_name>
-	ROSA 2012 MARATHON (public beta)
+	ROSA 2012 MARATHON
     </product_name>
   <item name="Launch system">
     vga=788
@@ -29,6 +29,7 @@
     logo.nologo
     nomodeset
     install
+    quiet
  </item>
  <item name="Check Disk">
      md5
