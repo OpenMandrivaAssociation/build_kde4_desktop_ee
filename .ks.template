@@ -31,6 +31,9 @@ repo --name=Restricted	--baseurl=http://mirror.yandex.ru/mandriva/official/restr
 sed -i 's!MandrivaLinux!ROSALinux!g' /etc/lsb-release
 sed -i 's!Mandriva!ROSA Marathon!g' /etc/lsb-release
 sed -i 's!2011.0!2012!g' /etc/lsb-release                                                                                                                                                            
+
+#We user non-free version (like EE)
+sed -i 's/Free/EE/' /etc/product.id
                                                       
 # adding messagebus user to workaround rpm ordering (eugeni)
 /usr/share/rpm-helper/add-user dbus 1 messagebus / /sbin/nologin
