@@ -209,7 +209,7 @@ kdegraphics4-core
 
 kde-l10n-en_GB
 kde-l10n-pl
-kde-l10n-pt_BR
+kde-l10n-pt
 kde-l10n-ru
 kde-l10n-uk
 kde-l10n-es
@@ -383,7 +383,6 @@ netprofile
 net-tools
 nfs-utils-clients
 notification-daemon
-nspluginwrapper
 nss
 nss_mdns
 nss_tcb
