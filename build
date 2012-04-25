@@ -50,7 +50,7 @@ for arch in $ARCHS; do
 	mkdir -p $build_root/iso/${product_id}/
 	livecd-creator --config=${ks} --fslabel=${product_id}.$arch --menu-config=${build_root}/.menu.xml --tmpdir=/share/temp/ -d -v
 
-	mv ${product_id}.$arch.$i.iso $build_root/iso/${product_id}/
+	mv ${product_id}.$arch.iso $build_root/iso/${product_id}/
 	isohybrid $build_root/iso/${product_id}/${product_id}.$arch.iso
 	md5sum  $build_root/iso/${product_id}/${product_id}.$arch.iso > $build_root/iso/${product_id}/${product_id}.$arch.iso.md5sum
 
