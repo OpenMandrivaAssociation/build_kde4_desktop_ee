@@ -21,7 +21,7 @@ build_root="./"
 
 d=`date +%Y.%m.%d-%H.%M`
 
-product_id="ROSA.2012.MARATHON"
+product_id="ROSA.2012.MARATHON.EE"
 product_name_file="${build_root}/.name.txt" ; touch ${product_name_file}
 
 #ks="${build_root}/${product_id}/.ks"
@@ -51,8 +51,8 @@ for arch in $ARCHS; do
 	livecd-creator --config=${ks} --fslabel=${product_id}.$arch.$i --menu-config=${build_root}/.menu.xml --tmpdir=/share/temp/ -d -v
 
 	mv ${product_id}.$arch.$i.iso $build_root/iso/${product_id}/
-	isohybrid $build_root/iso/${product_id}/${product_id}.$arch.$i.iso
-	md5sum  $build_root/iso/${product_id}/${product_id}.$arch.$i.iso > $build_root/iso/${product_id}/${product_id}.$arch.$i.iso.md5sum
+	isohybrid $build_root/iso/${product_id}/${product_id}.$arch.iso
+	md5sum  $build_root/iso/${product_id}/${product_id}.$arch.$i.iso > $build_root/iso/${product_id}/${product_id}.$arch.iso.md5sum
 
 	echo ""
 	echo "          ALL DONE!        $build_root/iso/${product_id}/${product_id}.$arch.$i.iso"

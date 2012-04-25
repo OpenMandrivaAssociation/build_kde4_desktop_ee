@@ -97,18 +97,8 @@ pushd /usr/share/mdk/backgrounds/
 ln -s rosa-background.jpg default.jpg 
 popd
 
-# 
-
-#Fix firefox 3-th extentions install
-
-#echo 'user_pref("extensions.shownSelectionUI",true);' >> /usr/lib/firefox-*/defaults/pref/mandriva.js
-#echo 'user_pref("extensions.autoDisableScopes", 0);' >> /usr/lib/firefox-*/defaults/pref/mandriva.js
-
-#Fix thunderbird 
-
-#echo 'user_pref("extensions.shownSelectionUI",true);' >> /usr/lib/thunderbird-*/defaults/pref/all-mandriva.js 
-#echo 'user_pref("extensions.autoDisableScopes", 0);' >> /usr/lib/thunderbird-*/defaults/pref/all-mandriva.js
-
+# Delete all search plugins also Yandex
+rm -f /usr/lib/firefox*/searchplugins/google.xml
 
 # mtab
 pushd /etc/
