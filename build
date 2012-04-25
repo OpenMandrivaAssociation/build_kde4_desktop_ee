@@ -55,6 +55,6 @@ for arch in $ARCHS; do
 	md5sum  $build_root/iso/${product_id}/${product_id}.$arch.iso > $build_root/iso/${product_id}/${product_id}.$arch.iso.md5sum
 
 	echo ""
-	echo "          ALL DONE!        $build_root/iso/${product_id}/${product_id}.$arch.$i.iso"
+	echo "          ALL DONE!        $build_root/iso/${product_id}/${product_id}.$arch.iso"
 	echo ""
 done
