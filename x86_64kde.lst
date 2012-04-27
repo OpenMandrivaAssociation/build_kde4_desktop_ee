@@ -221,6 +221,7 @@ kde-l10n-nl
 kde-l10n-fr
 kde-l10n-it
 kde-l10n-ro
+kde-l10n-de
 
 kdnssd
 keychain
@@ -882,3 +883,4 @@ plasma-applet-folderview
 unrar
 flash-player-plugin
 flash-player-plugin-kde
+ktorrent
