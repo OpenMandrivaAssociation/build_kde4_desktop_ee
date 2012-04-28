@@ -205,6 +205,9 @@ done
     rm -f $INSTALL_ROOT/usr/share/icons/nuoveXT2/icon-theme.cache
     rm -f $INSTALL_ROOT/home/live/.face.icon
 
+#ssh key don't need delete
+    rm -f $INSTALL_ROOT/etc/ssh/*key*
+
     cp -rfT     #PATH#/.counter $INSTALL_ROOT/etc/isonumber 
 
     cp -f 		#PATH#/root/GPL $LIVE_ROOT/
