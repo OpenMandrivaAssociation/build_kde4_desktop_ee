@@ -100,6 +100,7 @@ popd
 
 # Delete all search plugins also Yandex
 rm -f /usr/lib/firefox*/searchplugins/google.xml
+rm -f /usr/lib64/firefox*/searchplugins/google.xml
 
 # mtab
 pushd /etc/
@@ -119,7 +120,7 @@ rm -rf /etc/localtime
 sed -i 's/MDVGROUP/WORKGROUP/' /etc/samba/smb.conf
 
 #All file in /etc/modprobe.d need .conf in tail
-mv /etc/modprobe.d/snd-oss /etc/modprobe.d/snd-oss.conf
+mv -f /etc/modprobe.d/snd-oss /etc/modprobe.d/snd-oss.conf
 
 #
 # DKMS
