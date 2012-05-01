@@ -119,9 +119,6 @@ rm -rf /etc/localtime
 #Change samba groupe to WORKGROUP
 sed -i 's/MDVGROUP/WORKGROUP/' /etc/samba/smb.conf
 
-#All file in /etc/modprobe.d need .conf in tail
-mv -f /etc/modprobe.d/snd-oss /etc/modprobe.d/snd-oss.conf
-
 #
 # DKMS
 #
