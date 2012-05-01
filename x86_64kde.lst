@@ -651,6 +651,7 @@ x11-driver-video-v4l
 x11-driver-video-vboxvideo
 x11-driver-video-vesa
 x11-driver-video-vmware
+x11-driver-video-qxl
 x11-font-adobe-75dpi
 x11-font-alias
 x11-font-bh-75dpi
