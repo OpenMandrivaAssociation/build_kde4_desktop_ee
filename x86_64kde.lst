@@ -892,3 +892,6 @@ flash-player-plugin-kde
 ktorrent
 lib64alsa-plugins
 system-config-services
+bash-completion
+autologin
+

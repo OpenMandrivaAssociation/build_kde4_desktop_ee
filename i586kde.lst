@@ -890,3 +890,5 @@ unrar
 ktorrent
 libalsa-plugins
 system-config-services
+autologin
+bash-completion
