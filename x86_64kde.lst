@@ -721,7 +721,7 @@ rosa-elementary-theme
 rosa-icons
 kamera
 atmel-firmware
-#bluez-firmware
+bluez-firmware
 initrd-firmware
 ipw2100-firmware
 ipw2200-firmware
@@ -774,12 +774,12 @@ iwlwifi-5000-ucode
 iwlwifi-5150-ucode
 iwlwifi-6050-ucode
 
-#x11-driver-video-fglrx
-#x11-driver-video-nvidia-current
-#x11-driver-video-nvidia173
-#x11-driver-video-nvidia96xx
+x11-driver-video-fglrx
+x11-driver-video-nvidia-current
+x11-driver-video-nvidia173
+x11-driver-video-nvidia96xx
 
-#improver_client
+improver_client
 glxinfo
 alsa-utils
 alsa-plugins-pulseaudio
@@ -880,7 +880,6 @@ gstreamer0.10-plugins-ugly
 htop
 traceroute
 dkms-broadcom-wl
-bluez-firmware
 pulseaudio-module-bluetooth
 bluez-alsa
 elementary-theme
