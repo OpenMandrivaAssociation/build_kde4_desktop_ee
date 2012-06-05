@@ -27,9 +27,22 @@
     splash=silent
     install
     logo.nologo
+    install
+    quiet
+  <item name="Install system (safe mode)">
+    vga=788
+    desktop
+    nopat
+    rd_NO_LUKS
+    rd_NO_MD
+    noiswmd
+    splash=silent
+    install
+    logo.nologo
     nomodeset
     install
     quiet
+ </item>
  </item>
  <item name="Check Disk">
      md5
