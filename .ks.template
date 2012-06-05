@@ -119,6 +119,10 @@ rm -rf /etc/localtime
 #Change samba groupe to WORKGROUP
 sed -i 's/MDVGROUP/WORKGROUP/' /etc/samba/smb.conf
 
+#fix CDROM autoclose
+
+sed -i 's/dev.cdrom.autoclose=1/dev.cdrom.autoclose=0/' /etc/sysctl.conf
+
 #
 # DKMS
 #
