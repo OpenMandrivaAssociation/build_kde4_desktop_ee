@@ -6,7 +6,17 @@
     <product_name>
 	ROSA 2012 MARATHON
     </product_name>
-  <item name="Launch system">
+  <item name="Launch in LIVE mode">
+    vga=788
+    desktop
+    nopat
+    rd_NO_LUKS
+    rd_NO_MD
+    noiswmd
+    splash=silent
+    logo.nologo
+  </item>
+  <item name="Launch in LIVE mode (safe)">
     vga=788
     desktop
     nopat
@@ -16,7 +26,7 @@
     splash=silent
     logo.nologo
     nomodeset
-  </item>                                              
+  </item>                                                                                      
   <item name="Install system">
     vga=788
     desktop
@@ -29,6 +39,7 @@
     logo.nologo
     install
     quiet
+  </item>
   <item name="Install system (safe mode)">
     vga=788
     desktop
@@ -42,7 +53,6 @@
     nomodeset
     install
     quiet
- </item>
  </item>
  <item name="Check Disk">
      md5
