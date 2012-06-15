@@ -12,7 +12,13 @@ repo --name=Main_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012l
 
 repo --name=Non-Free_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/#ARCH#/non-free/release
 
-repo --name=Restricted	--baseurl=http://mirror.yandex.ru/mandriva/official/restricted/2011.0/#ARCH#/
+repo --name=Main_LTS_updates       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/#ARCH#/main/updates
+
+repo --name=Non-Free_LTS_updates       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/#ARCH#/non-free/updates
+
+repo --name=Restricted	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/#ARCH#/restricted/release
+
+repo --name=Restricted_updates	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/#ARCH#/restricted/updates
 
 # for 32bit stuff on 64bits arch
 #repo --name=Main32_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/i586/main/release
