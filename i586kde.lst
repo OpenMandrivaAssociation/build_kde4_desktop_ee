@@ -892,3 +892,5 @@ libalsa-plugins
 #system-config-services
 autologin
 bash-completion
+k3b
+gimp
