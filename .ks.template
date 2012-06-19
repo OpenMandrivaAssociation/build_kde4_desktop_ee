@@ -199,8 +199,7 @@ while (#PATH#/lsof /dev/loop* | grep -v "$0" | grep "$INSTALL_ROOT")
 do
  sleep 5s
 done
-   
-   rm -f $INSTALL_ROOT/etc/mtab
+
    
    cp -rfT 	#PATH#/extraconfig/etc $INSTALL_ROOT/etc/
     cp -rfT 	#PATH#/extraconfig/usr $INSTALL_ROOT/usr/    
