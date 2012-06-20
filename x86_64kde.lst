@@ -774,10 +774,10 @@ iwlwifi-5000-ucode
 iwlwifi-5150-ucode
 iwlwifi-6050-ucode
 
-x11-driver-video-fglrx
-x11-driver-video-nvidia-current
-x11-driver-video-nvidia173
-x11-driver-video-nvidia96xx
+#x11-driver-video-fglrx
+#x11-driver-video-nvidia-current
+#x11-driver-video-nvidia173
+#x11-driver-video-nvidia96xx
 
 improver_client
 glxinfo

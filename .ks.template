@@ -105,8 +105,8 @@ ln -s rosa-background.jpg default.jpg
 popd
 
 # Delete all search plugins also Yandex
-rm -f /usr/lib/firefox*/searchplugins/google.xml
-rm -f /usr/lib64/firefox*/searchplugins/google.xml
+#rm -f /usr/lib/firefox*/searchplugins/google.xml
+#rm -f /usr/lib64/firefox*/searchplugins/google.xml
 
 # mtab
 pushd /etc/
@@ -200,11 +200,14 @@ do
  sleep 5s
 done
 
+#delete mtab for replace it symlynk
+   rm -f $INSTALL_ROOT/etc/mtab
    
-   cp -rfT 	#PATH#/extraconfig/etc $INSTALL_ROOT/etc/
+    cp -rfT 	#PATH#/extraconfig/etc $INSTALL_ROOT/etc/
     cp -rfT 	#PATH#/extraconfig/usr $INSTALL_ROOT/usr/    
-    cp -rfT 	#PATH#/extraconfig/var $INSTALL_ROOT/var/    
-    cp -rfT 	#PATH#/extraconfig/var $INSTALL_ROOT/root/
+#    cp -rfT 	#PATH#/extraconfig/var $INSTALL_ROOT/var/
+#    cp -rfT 	#PATH#/extraconfig/var $INSTALL_ROOT/root/
+    
     cp -rfT     #PATH#/extraconfig/etc/skel $INSTALL_ROOT/home/live/
     chown -R 500:500 $INSTALL_ROOT/home/live/
     chmod -R 0777 $INSTALL_ROOT/home/live/.local
