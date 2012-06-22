@@ -779,7 +779,7 @@ iwlwifi-6050-ucode
 #x11-driver-video-nvidia173
 #x11-driver-video-nvidia96xx
 
-improver_client
+
 glxinfo
 alsa-utils
 alsa-plugins-pulseaudio
