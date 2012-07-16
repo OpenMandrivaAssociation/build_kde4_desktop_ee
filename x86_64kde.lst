@@ -252,7 +252,7 @@ krdc
 krfb
 ksendemail
 ksnapshot
-kttsd
+#kttsd
 kwallet
 kwallet-daemon
 kwrite
@@ -894,4 +894,6 @@ system-config-services
 bash-completion
 autologin
 k3b
-gimp
+mozilla-thunderbird-lightning
+#gimp
+akonadi-mailfilter-agent
