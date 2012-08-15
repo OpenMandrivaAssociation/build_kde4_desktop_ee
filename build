@@ -21,7 +21,7 @@ build_root="./"
 
 d=`date +%Y.%m.%d-%H.%M`
 
-product_id="ROSA.2012.RP1.MARATHON.EE"
+product_id="ROSA.2012.1.EE"
 product_name_file="${build_root}/.name.txt" ; touch ${product_name_file}
 
 #ks="${build_root}/${product_id}/.ks"

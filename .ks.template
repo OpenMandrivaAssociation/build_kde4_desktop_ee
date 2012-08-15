@@ -29,14 +29,9 @@ repo --name=Restricted_updates	--baseurl=http://abf.rosalinux.ru/downloads/rosa2
 
 %post
 
-echo "ROSA Marathon 2012" > /etc/redhat-release                                                                                                                                                             
-echo "ROSA Marathon 2012" > /etc/issue                                                                                                                                                                      
-echo "ROSA Marathon 2012" > /etc/issue.net                                                                                                                                                                  
-echo "ROSA Marathon 2012" > /etc/system-release  
-echo "ROSA Marathon 2012" > /etc/os-release
 sed -i 's!MandrivaLinux!ROSALinux!g' /etc/lsb-release
 sed -i 's!Mandriva!ROSA Marathon!g' /etc/lsb-release
-sed -i 's!2011.0!2012!g' /etc/lsb-release                                                                                                                                                            
+sed -i 's!2011.0!2012.1!g' /etc/lsb-release                                                                                                                                                            
 
 #We user non-free version (like EE)
 sed -i 's/Free/EE/' /etc/product.id
