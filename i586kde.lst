@@ -599,7 +599,6 @@ vnstat
 vte
 webkit1.0
 webkit1.0-webinspector
-webkit
 wget
 which
 wireless-regdb
@@ -640,7 +639,6 @@ x11-driver-video-s3
 x11-driver-video-s3virge
 x11-driver-video-savage
 x11-driver-video-sis
-x11-driver-video-sisimedia
 x11-driver-video-sisusb
 x11-driver-video-tdfx
 x11-driver-video-trident
@@ -844,7 +842,6 @@ ccid
 krb5-workstation
 sasl-plug-gssapi
 nscd
-nss_db
 nss_ldap
 nss_updatedb
 openldap-clients
@@ -859,8 +856,8 @@ perl-Net-DNS
 samba-winbind
 tigervnc-server
 xl2tpd
-flash-player-plugin
-flash-player-plugin-kde
+#flash-player-plugin
+#flash-player-plugin-kde
 lsof
 vpnpptp-allde
 kcm_license
@@ -877,7 +874,6 @@ glibc-i18ndata
 gstreamer0.10-plugins-ugly
 htop
 traceroute
-#alsaconfig
 dkms-broadcom-wl
 bluez-firmware
 pulseaudio-module-bluetooth
@@ -888,10 +884,8 @@ plasma-applet-folderview
 unrar
 ktorrent
 libalsa-plugins
-#system-config-services
 autologin
 bash-completion
 k3b
 mozilla-thunderbird-lightning
-#gimp
 akonadi-mailfilter-agent

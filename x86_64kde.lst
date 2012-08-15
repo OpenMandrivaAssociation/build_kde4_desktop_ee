@@ -602,7 +602,6 @@ vnstat
 vte
 webkit1.0
 webkit1.0-webinspector
-webkit
 wget
 which
 wireless-regdb
@@ -643,7 +642,6 @@ x11-driver-video-s3
 x11-driver-video-s3virge
 x11-driver-video-savage
 x11-driver-video-sis
-x11-driver-video-sisimedia
 x11-driver-video-sisusb
 x11-driver-video-tdfx
 x11-driver-video-trident
@@ -848,7 +846,6 @@ autofs
 krb5-workstation
 sasl-plug-gssapi
 nscd
-nss_db
 nss_ldap
 nss_updatedb
 openldap-clients
@@ -895,5 +892,4 @@ bash-completion
 autologin
 k3b
 mozilla-thunderbird-lightning
-#gimp
 akonadi-mailfilter-agent
