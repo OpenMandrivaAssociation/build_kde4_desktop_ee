@@ -8,20 +8,20 @@ part / --size 8692
 services --enabled=acpid,alsa,atd,avahi-daemon,prefdm,haldaemon,irqbalance,mandi,dbus,netfs,network,network-up,partmon,resolvconf,rpcbind,rsyslog,sound,udev-post,cups,mandrake_everytime,crond
 services --disabled=sshd,pptp,pppoe,ntpd,iptables,ip6tables,shorewall,nfs-server,network,network-up,mysqld,abrtd,mysql,postfix
 
-repo --name=Main_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/#ARCH#/main/release
+repo --name=Main_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/main/release
 
-repo --name=Non-Free_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/#ARCH#/non-free/release
+repo --name=Non-Free_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/non-free/release
 
-repo --name=Main_LTS_updates       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/#ARCH#/main/updates
+repo --name=Main_LTS_updates       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/main/updates
 
-repo --name=Non-Free_LTS_updates       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/#ARCH#/non-free/updates
+repo --name=Non-Free_LTS_updates       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/non-free/updates
 
-repo --name=Restricted	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/#ARCH#/restricted/release
+repo --name=Restricted	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/restricted/release
 
-repo --name=Restricted_updates	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/#ARCH#/restricted/updates
+repo --name=Restricted_updates	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/restricted/updates
 
 # for 32bit stuff on 64bits arch
-#repo --name=Main32_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012lts/repository/i586/main/release
+#repo --name=Main32_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/i586/main/release
 
 %packages
 %include #PATH#/#ARCH#kde.lst
