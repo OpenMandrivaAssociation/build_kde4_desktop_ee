@@ -409,8 +409,6 @@ libreoffice-style-oxygen
 libreoffice-writer
 
 openssh
-openssh-askpass
-openssh-askpass-common
 openssh-clients
 openssh-server
 openssl
@@ -841,9 +839,9 @@ krb5-workstation
 sasl-plug-gssapi
 nscd
 nss_ldap
-nss_updatedb
 openldap-clients
 opensc
+kmod
 
 pam_krb5
 pam_ldap

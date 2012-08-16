@@ -9,12 +9,10 @@ harddrake
 mc
 kernel-desktop-latest
 kernel-desktop-devel-latest
-#kernel-source-latest
-#kernel-desktop
-#kernel-desktop-devel
 dracut-017
 locales
 lib64stdc++6
+kmod
 
 acl
 acpi
@@ -413,8 +411,6 @@ libreoffice-style-oxygen
 libreoffice-writer
 
 openssh
-openssh-askpass
-openssh-askpass-common
 openssh-clients
 openssh-server
 openssl
@@ -846,7 +842,6 @@ krb5-workstation
 sasl-plug-gssapi
 nscd
 nss_ldap
-nss_updatedb
 openldap-clients
 opensc
 
