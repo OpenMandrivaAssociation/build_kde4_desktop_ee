@@ -164,8 +164,8 @@ gvfs-gphoto2
 gvfs-smb
 gwenview
 gzip
-hal
-hal-info
+#hal
+#hal-info
 harddrake
 harddrake-ui
 hcl
