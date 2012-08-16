@@ -13,7 +13,7 @@ dracut-017
 locales
 lib64stdc++6
 kmod
-
+lib64kmod2
 acl
 acpi
 acpid
@@ -308,7 +308,7 @@ mkfontscale
 mktemp
 mkxauth
 mlocate
-module-init-tools
+#module-init-tools
 monitor-edid
 mtools
 
