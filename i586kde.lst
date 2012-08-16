@@ -1,4 +1,3 @@
-make
 makedev
 coreutils
 livecd-tools
@@ -289,8 +288,8 @@ rosa-gfxboot-theme
 mandriva-kde-icons
 mandriva-kde4-config-common
 mandriva-kde-translation
-mandriva-release-common
-mandriva-release-One
+rosa-release-common
+rosa-release-EE
 mandriva-theme-common
 mandriva-theme-Rosa
 mandriva-theme-Rosa-screensaver
@@ -689,7 +688,7 @@ zcip
 zip
 
 systemd-sysvinit
-systemd-gtk
+systemd
 networkmanager
 networkmanager-openvpn
 networkmanager-vpnc
