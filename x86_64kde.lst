@@ -621,7 +621,6 @@ x11-driver-input-mouse
 x11-driver-input-mutouch
 x11-driver-input-penmount
 x11-driver-input-synaptics
-x11-driver-input-vboxmouse
 x11-driver-input-void
 x11-driver-input-wacom
 x11-driver-video
