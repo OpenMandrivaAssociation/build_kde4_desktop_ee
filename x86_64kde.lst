@@ -257,7 +257,7 @@ kwrite
 ld10k1
 ldetect
 ldetect-lst
-
+lib64ldetect0.12
 less
 lftp
 lm_sensors
