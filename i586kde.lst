@@ -306,7 +306,7 @@ mkfontscale
 mktemp
 mkxauth
 mlocate
-module-init-tools
+#module-init-tools
 monitor-edid
 mtools
 
@@ -840,7 +840,7 @@ nss_ldap
 openldap-clients
 opensc
 kmod
-
+libkmod2
 pam_krb5
 pam_ldap
 pcsc-lite
