@@ -9,7 +9,7 @@ harddrake
 mc
 kernel-desktop-latest
 kernel-desktop-devel-latest
-dracut-017
+dracut
 locales
 lib64stdc++6
 kmod
@@ -864,7 +864,7 @@ glibc-i18ndata
 gstreamer0.10-plugins-ugly
 htop
 traceroute
-dkms-broadcom-wl
+#dkms-broadcom-wl
 pulseaudio-module-bluetooth
 bluez-alsa
 elementary-theme
@@ -877,5 +877,9 @@ system-config-services
 bash-completion
 autologin
 k3b
-mozilla-thunderbird-lightning
+#mozilla-thunderbird-lightning
 akonadi-mailfilter-agent
+microcode
+kuser
+kcm_grub2
+klook
