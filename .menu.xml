@@ -4,7 +4,7 @@
         Welcome to
     </welcome_message>
     <product_name>
-	ROSA 2012.1
+	ROSA 2012 Desktop Beta1
     </product_name>
   <item name="Launch in LIVE mode">
     vga=788
@@ -16,19 +16,8 @@
     splash=silent
     logo.nologo
   </item>
-  <item name="Launch in LIVE mode (safe)">
-    vga=788
-    desktop
-    nopat
-    rd_NO_LUKS
-    rd_NO_MD
-    noiswmd
-    splash=silent
-    logo.nologo
-    nomodeset
-  </item>                                                                                      
   <item name="Install system">
-    vga=788
+    vga=791
     desktop
     nopat
     rd_NO_LUKS
@@ -41,7 +30,7 @@
     quiet
   </item>
   <item name="Install system (safe mode)">
-    vga=788
+    vga=791
     desktop
     nopat
     rd_NO_LUKS
