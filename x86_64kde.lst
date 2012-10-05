@@ -876,6 +876,7 @@ k3b
 #mozilla-thunderbird-lightning
 akonadi-mailfilter-agent
 microcode
+microcode_ctl
 kuser
 kcm-grub2
 klook
