@@ -492,7 +492,7 @@ python-qt4-test
 python-qt4-webkit
 python-qt4-xml
 python-qt4-xmlpatterns
-python-sabayon
+#python-sabayon
 python-sip
 python-twisted-core
 python-twisted-web
@@ -705,7 +705,7 @@ rosa-icons
 kamera
 atmel-firmware
 bluez-firmware
-initrd-firmware
+#initrd-firmware
 ipw2100-firmware
 ipw2200-firmware
 kernel-firmware-extra
