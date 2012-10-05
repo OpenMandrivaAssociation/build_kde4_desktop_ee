@@ -5,23 +5,14 @@ firewall --enabled
 firstboot --enabled
 part / --size 8692
 
-services --enabled=acpid,alsa,atd,avahi-daemon,prefdm,haldaemon,irqbalance,mandi,dbus,netfs,network,network-up,partmon,resolvconf,rpcbind,rsyslog,sound,udev-post,cups,mandrake_everytime,crond
-services --disabled=sshd,pptp,pppoe,ntpd,iptables,ip6tables,shorewall,nfs-server,network,network-up,mysqld,abrtd,mysql,postfix
+services --enabled=acpid,alsa,atd,avahi-daemon,prefdm,irqbalance,mandi,dbus,netfs,network,network-up,partmon,resolvconf,rpcbind,rsyslog,sound,udev-post,mandrake_everytime,crond
+services --disabled=sshd,pptp,pppoe,ntpd,iptables,ip6tables,shorewall,nfs-server,mysqld,abrtd,mysql,postfix,cups
 
-repo --name=Main_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/main/release
+repo --name=Main       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/main/release
 
-repo --name=Non-Free_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/non-free/release
+repo --name=Non-Free       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/non-free/release
 
-repo --name=Main_LTS_updates       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/main/updates
-
-repo --name=Non-Free_LTS_updates       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/non-free/updates
-
-repo --name=Restricted	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/restricted/release
-
-repo --name=Restricted_updates	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/restricted/updates
-
-# for 32bit stuff on 64bits arch
-#repo --name=Main32_LTS       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/i586/main/release
+repo --name=Restricted	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#//restricted/release
 
 %packages
 %include #PATH#/#ARCH#kde.lst
@@ -29,38 +20,32 @@ repo --name=Restricted_updates	--baseurl=http://abf.rosalinux.ru/downloads/rosa2
 
 %post
 
-sed -i 's!MandrivaLinux!ROSALinux!g' /etc/lsb-release
-sed -i 's!Mandriva!ROSA Marathon!g' /etc/lsb-release
-sed -i 's!2011.0!2012.1!g' /etc/lsb-release                                                                                                                                                            
+#sed -i 's!MandrivaLinux!ROSALinux!g' /etc/lsb-release
+#sed -i 's!Mandriva!ROSA Desktop!g' /etc/lsb-release
+#sed -i 's!2011.0!2012.1!g' /etc/lsb-release                                                                                                                                                            
 
 #We user non-free version (like EE)
-sed -i 's/Free/EE/' /etc/product.id
-sed -i 's/One/EE/' /etc/product.id
+#sed -i 's/Free/EE/' /etc/product.id
+#sed -i 's/One/EE/' /etc/product.id
                                                       
 # adding messagebus user to workaround rpm ordering (eugeni)
-/usr/share/rpm-helper/add-user dbus 1 messagebus / /sbin/nologin
-/usr/share/rpm-helper/add-group dbus 1 messagebus
+#/usr/share/rpm-helper/add-user dbus 1 messagebus / /sbin/nologin
+#/usr/share/rpm-helper/add-group dbus 1 messagebus
 
-/bin/chown root:messagebus /lib*/dbus-1/dbus-daemon-launch-helper
-/bin/chmod u+s,g-s /lib*/dbus-1/dbus-daemon-launch-helper
+#/bin/chown root:messagebus /lib*/dbus-1/dbus-daemon-launch-helper
+#/bin/chmod u+s,g-s /lib*/dbus-1/dbus-daemon-launch-helper
 
 ####### avahi workaround                                                                                        
-/usr/share/rpm-helper/add-user avahi 1 avahi /var/avahi /bin/false                                              
-/usr/share/rpm-helper/add-user avahi 1 avahi-autoipd /var/avahi /bin/false                                      
-/usr/share/rpm-helper/add-service avahi 1 avahi-daemon                                                          
+#/usr/share/rpm-helper/add-user avahi 1 avahi /var/avahi /bin/false                                              
+#/usr/share/rpm-helper/add-user avahi 1 avahi-autoipd /var/avahi /bin/false                                      
+#/usr/share/rpm-helper/add-service avahi 1 avahi-daemon                                                          
 #### end of it
 
-
-echo "----->"
-/bin/ls -l /boot/
-echo "----------->"
 echo "###################################### Make initrd symlink >> "
 echo ""
 
 /usr/sbin/update-alternatives --set mkinitrd /usr/sbin/mkinitrd-dracut
 rm -rf /boot/initrd-*
-
-echo "----------------->"
 
 # adding life user
 /usr/sbin/adduser live
@@ -70,9 +55,9 @@ echo "----------------->"
 /bin/chown -R live:live /home/live
 # usermod -a -G cdrom live
 # enable live user autologin
-if [ -f /usr/share/config/kdm/kdmrc ]; then
-	/bin/sed -i -e 's/.*AutoLoginEnable.*/AutoLoginEnable=true/g' -e 's/.*AutoLoginUser.*/AutoLoginUser=live/g' /usr/share/config/kdm/kdmrc
-fi
+#if [ -f /usr/share/config/kdm/kdmrc ]; then
+#	/bin/sed -i -e 's/.*AutoLoginEnable.*/AutoLoginEnable=true/g' -e #'s/.*AutoLoginUser.*/AutoLoginUser=live/g' /usr/share/config/kdm/kdmrc
+#fi
 
 # ldetect stuff
 /usr/sbin/update-ldetect-lst
@@ -99,61 +84,53 @@ pushd /usr/share/mdk/backgrounds/
 ln -s rosa-background.jpg default.jpg 
 popd
 
-# Delete all search plugins also Yandex
-#rm -f /usr/lib/firefox*/searchplugins/google.xml
-#rm -f /usr/lib64/firefox*/searchplugins/google.xml
-
 # mtab
-pushd /etc/
-ln -sf /proc/mounts mtab
-popd
+# pushd /etc/
+# ln -sf /proc/mounts mtab
+# popd
 
 #####workaround for time###                                                                                                                                                                                        
-rm -rf /etc/sysconfig/clock                                                                                                                                                                                        
-rm -rf /etc/adjtime                                                                                                                                                                                                
-rm -rf /etc/localtime                                                                                                                                                                                              
+# rm -rf /etc/sysconfig/clock                                                                                                                                                                                        
+# rm -rf /etc/adjtime                                                                                                                                                                                                
+# rm -rf /etc/localtime                                                                                                                                                                                              
 ##### 
 ###chkconfig###                                                                                                                                                                                                    
 /sbin/chkconfig --add checkflashboot                                                                                                                                                                               
 #####       
 
-#Change samba groupe to WORKGROUP
-sed -i 's/MDVGROUP/WORKGROUP/' /etc/samba/smb.conf
-
-#fix CDROM autoclose
-
-sed -i 's/dev.cdrom.autoclose=1/dev.cdrom.autoclose=0/' /etc/sysctl.conf
+# Change samba groupe to WORKGROUP
+# sed -i 's/MDVGROUP/WORKGROUP/' /etc/samba/smb.conf
 
 #
 # DKMS
 #
 
-echo
-echo
-echo Rebuilding DKMS drivers
-echo
-echo
+# echo
+# echo
+# echo Rebuilding DKMS drivers
+# echo
+# echo
 
-export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+# export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 #build arch import for vboxadditions dkms + flash workaround###
 
-export BUILD_TARGET_ARCH=x86
-XXX=`file /bin/rpm |grep -c x86-64`                                                                                                                                                                                
-if [ "$XXX" = "1" ];  then  
-export BUILD_TARGET_ARCH=amd64
-fi
+# export BUILD_TARGET_ARCH=x86
+# XXX=`file /bin/rpm |grep -c x86-64`                                                                                                                                                                                
+# if [ "$XXX" = "1" ];  then  
+# export BUILD_TARGET_ARCH=amd64
+# fi
 
-echo " ###DKMS BUILD### "                                                                                                                                                                                          
-kernel_ver=`ls /boot | /bin/grep vmlinuz | /bin/sed 's/vmlinuz-//'`   
-for module in broadcom-wl vboxadditions r8192se; do                                                                                                                              
-module_version=`rpm --qf '%{VERSION}\n' -q dkms-$module`                                                                                                                                                           
-module_release=`rpm --qf '%{RELEASE}\n' -q dkms-$module`                                                                                                                                                           
-/usr/sbin/dkms -k $kernel_ver -a #ARCH# --rpm_safe_upgrade add -m $module -v $module_version-$module_release
-/usr/sbin/dkms -k $kernel_ver -a #ARCH# --rpm_safe_upgrade build -m $module -v $module_version-$module_release                                                                                  
-/usr/sbin/dkms -k $kernel_ver -a #ARCH# --rpm_safe_upgrade install -m $module -v $module_version-$module_release --force                                                                        
-done                                                                                                                                                                                                               
-echo "END OF IT" 
+# echo " ###DKMS BUILD### "                                                                                                                                                                                          
+# kernel_ver=`ls /boot | /bin/grep vmlinuz | /bin/sed 's/vmlinuz-//'`   
+# for module in broadcom-wl vboxadditions r8192se; do                                                                                                                              
+# module_version=`rpm --qf '%{VERSION}\n' -q dkms-$module`                                                                                                                                                           
+# module_release=`rpm --qf '%{RELEASE}\n' -q dkms-$module`                                                                                                                                                           
+# /usr/sbin/dkms -k $kernel_ver -a #ARCH# --rpm_safe_upgrade add -m $module -v $module_version-$module_release
+#/usr/sbin/dkms -k $kernel_ver -a #ARCH# --rpm_safe_upgrade build -m $module -v $module_version- $module_release                                                                                  
+#/usr/sbin/dkms -k $kernel_ver -a #ARCH# --rpm_safe_upgrade install -m $module -v $module_version-$module_release --force                                                                        
+#done                                                                                                                                                                                                               
+#echo "END OF IT" 
 #/bin/bash
 #
 # kernel
@@ -163,7 +140,7 @@ echo "END OF IT"
 # Sysfs must be mounted for dracut to work!
 #
 mount -t sysfs /sys /sys
-
+# ln -s /usr/share/plymouth/themes/Mandriva-Rosa/rosa.png /usr/share/plymouth/themes/Mandriva-Rosa/welcome.png
 pushd /lib/modules/
 KERNEL=$(echo *)
 popd
@@ -172,7 +149,7 @@ echo Generating kernel. System kernel is `uname -r`, installed kernels are:
 rpm -qa kernel-*
 echo Detected kernel version: $KERNEL
 
-/usr/sbin/dracut --add-drivers "sr-mod xhci-hcd" /boot/initramfs-$KERNEL.img $KERNEL
+/usr/sbin/dracut --add-drivers "sr-mod xhci-hcd" /boot/initramfs-$KERNEL.img $KERNEL -v
 mkdir -p /run/initramfs/live/isolinux/
 ln -s /boot/initramfs-$KERNEL.img /run/initramfs/live/isolinux/initrd0.img
 #cp -f /boot/initramfs-$KERNEL.img /run/initramfs/live/isolinux/initrd0.img
@@ -194,22 +171,21 @@ while (#PATH#/lsof /dev/loop* | grep -v "$0" | grep "$INSTALL_ROOT")
 do
  sleep 5s
 done
-   
-    cp -rfT 	#PATH#/extraconfig/etc $INSTALL_ROOT/etc/
+
+   cp -rfT 	#PATH#/extraconfig/etc $INSTALL_ROOT/etc/
     cp -rfT 	#PATH#/extraconfig/usr $INSTALL_ROOT/usr/    
-#    cp -rfT 	#PATH#/extraconfig/var $INSTALL_ROOT/var/
-#    cp -rfT 	#PATH#/extraconfig/var $INSTALL_ROOT/root/
-    
+    cp -rfT 	#PATH#/extraconfig/var $INSTALL_ROOT/var/    
+    cp -rfT 	#PATH#/extraconfig/var $INSTALL_ROOT/root/
     cp -rfT     #PATH#/extraconfig/etc/skel $INSTALL_ROOT/home/live/
     chown -R 500:500 $INSTALL_ROOT/home/live/
     chmod -R 0777 $INSTALL_ROOT/home/live/.local
     chmod -R 0777 $INSTALL_ROOT/home/live/.kde4
 	#delete icon cache
-    rm -f $INSTALL_ROOT/usr/share/icons/gnome/icon-theme.cache
-    rm -f $INSTALL_ROOT/usr/share/icons/nuoveXT2/icon-theme.cache
-    rm -f $INSTALL_ROOT/home/live/.face.icon
+#    rm -f $INSTALL_ROOT/usr/share/icons/gnome/icon-theme.cache
+#   rm -f $INSTALL_ROOT/usr/share/icons/nuoveXT2/icon-theme.cache
+#    rm -f $INSTALL_ROOT/home/live/.face.icon
 
-#ssh key don't need delete
+#ssh key don't need
     rm -f $INSTALL_ROOT/etc/ssh/*key*
 
     cp -rfT     #PATH#/.counter $INSTALL_ROOT/etc/isonumber 
