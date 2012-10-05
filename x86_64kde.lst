@@ -1,8 +1,8 @@
 make
 makedev
 coreutils
-livecd-tools
-livecd-iso-to-disk
+#livecd-tools
+#livecd-iso-to-disk
 syslinux
 strace
 harddrake
@@ -198,9 +198,6 @@ kcron
 kde4-audiocd
 kde4-filesharing
 kde4-nsplugins
-kde4-style-iaora-common
-kdeaccessibility4
-kdeaccessibility4-core
 kdeartwork4-kscreensaver
 kdebase4-runtime
 kdebase4-workspace
@@ -505,7 +502,6 @@ qca2-plugin-openssl
 qt4-common
 qt4-database-plugin-mysql
 qt4-qtdbus
-qt4-style-iaora
 qt4-xmlpatterns
 qtscriptbindings
 quota
@@ -810,7 +806,7 @@ wvdial
 gksu
 ozerocdoff
 usb_modeswitch-data
-cpufreq
+#cpufreq
 cpufrequtils
 lib64stdc++6
 bind-utils
@@ -881,5 +877,5 @@ k3b
 akonadi-mailfilter-agent
 microcode
 kuser
-kcm_grub2
+kcm-grub2
 klook
