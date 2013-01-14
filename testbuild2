@@ -1,9 +1,0 @@
-#!/bin/sh
-
-# Send all output to a logfile and supress input
-
-typeset LOG="/home/LIVE/ROSA.2012.LTS/build.log"
-mv $LOG ${LOG}.old >/dev/null 2>&1
-[[ -t 1 ]] && echo "Writing to logfile '$LOG'."
-exec /home/LIVE/ROSA.2012.LTS/build |tee  $LOG 2>&1
-#exec /opt/ROSA.2011.beta2/build < /dev/null 2<&1

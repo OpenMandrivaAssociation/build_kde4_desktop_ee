@@ -9,3 +9,4 @@ TIMEZONE=simplified
 COUNTRY=simplified
 USERS=with_root
 remove_unused_packages=no
+services=no

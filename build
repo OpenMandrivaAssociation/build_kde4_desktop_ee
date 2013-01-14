@@ -21,14 +21,14 @@ build_root="./"
 
 d=`date +%Y.%m.%d-%H.%M`
 
-product_id="ROSA.2012.Desktop.Beta"
+product_id="ROSA.Fresh.Desktop.2012"
 product_name_file="${build_root}/.name.txt" ; touch ${product_name_file}
 
 #ks="${build_root}/${product_id}/.ks"
 
 ks="${build_root}/.ks"
 counter="${build_root}/.counter"
-menu="${build_root}/.menu.xml"
+#menu="${build_root}/.menu.xml"
 
 touch ${counter}
 
@@ -45,16 +45,20 @@ for arch in $ARCHS; do
 	cp -f ${ks}.template ${ks}
 	sed -i -e "s:#ARCH#:$arch:g" ${ks}
 	sed -i -e "s:#PATH#:${build_root}/:g" ${ks}
-	sed -i -e "s:#PATH#:${build_root}/:g" ${menu}
+#	sed -i -e "s:#PATH#:${build_root}/:g" ${menu}
 
 	mkdir -p $build_root/iso/${product_id}/
-	livecd-creator --config=${ks} --fslabel=${product_id}.$arch --menu-config=${build_root}/.menu.xml --tmpdir=/share/temp/ -d -v
+	livecd-creator --config=${ks} --fslabel=${product_id}.$arch
 
 	mv ${product_id}.$arch.iso $build_root/iso/${product_id}/
-	isohybrid $build_root/iso/${product_id}/${product_id}.$arch.iso
-	md5sum  $build_root/iso/${product_id}/${product_id}.$arch.iso > $build_root/iso/${product_id}/${product_id}.$arch.iso.md5sum
+#	isohybrid $build_root/iso/${product_id}/${product_id}.$arch.iso
+#	cd $build_root/iso/${product_id}/
+#	md5sum  ${product_id}.$arch.iso > ${product_id}.$arch.iso.md5sum
+        md5sum  $build_root/iso/${product_id}/${product_id}.$arch.iso > $build_root/iso/${product_id}/${product_id}.$arch.iso.md5sum
 
 	echo ""
 	echo "          ALL DONE!        $build_root/iso/${product_id}/${product_id}.$arch.iso"
 	echo ""
+#	cd /
+#	ls -R
 done

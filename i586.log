@@ -1,0 +1,14 @@
+/dev/loop0: [64257]:395593 (/share/temp/imgcreate-tLDEHr/tmp-XyMRp6/ext3fs.img (deleted))
+/dev/loop1: [64257]:395436 (/share/temp/imgcreate-_p3JGi/tmp-YkGBzn/ext3fs.img (deleted))
+/dev/loop2: [64257]:141780 (/var/ROSA.2012.1.Alpha.x86_64.iso)
+/dev/loop3: [1794]:1994 (/test/1/LiveOS/squashfs.img)
+/dev/loop4: [1795]:3 (/test/2/LiveOS/ext3fs.img)
+/dev/loop5: [64273]:49479756 (/var/tmp/imgcreate-4UfXtv/tmp-Iqib1f/ext3fs.img (deleted))
+losetup: /dev/loop0: detach failed: Device or resource busy
+losetup: /dev/loop1: detach failed: Device or resource busy
+losetup: /dev/loop2: detach failed: Device or resource busy
+losetup: /dev/loop3: detach failed: Device or resource busy
+losetup: /dev/loop4: detach failed: Device or resource busy
+losetup: /dev/loop5: detach failed: Device or resource busy
+losetup: /dev/loop6: detach failed: No such device or address
+losetup: /dev/loop7: detach failed: No such device or address

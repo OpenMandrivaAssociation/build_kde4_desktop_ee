@@ -1,0 +1,13 @@
+The script MATRIX generates a chroot environment made of fresh 2012.1 packages.
+The it checks out the latest build scripts inside the chroot and executes the build script.
+Build log is written into chrootdir/opt/ISOBUILD/build.log
+This is the example string of build start
+
+lst=.mini externalarch="i586 x86_64" PRODUCTNAME=ROSA.DESKTOP.ALPHA REPO=http://mirror.rosalinux.com/rosa/rosa2012.1/repository/x86_64/ SRCPATH=https://abf.rosalinux.ru/import/build2012.1test.git branch=rosa2012.1 ./MATRIX
+
+lst - lst type that will be used while iso creation. Initially lst files must be stored as $lst$arch.lst files, like kdei586.lst, lxdex86_64.lst. Setting the correct lst will result in correct lst used at build stage
+externalarch - arches that are used to build iso images
+PRODUCTNAME - chroot for iso build name, set as you want
+REPO - repository that will be used to create initial chroot. To build both i586 and x86_64 iso images you need a x86_64 chroot.
+SRCPATH - git repo to checkout iso build scripts
+branch - git branch to checkout from iso build scripts repo
