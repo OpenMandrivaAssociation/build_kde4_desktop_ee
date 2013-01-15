@@ -9,13 +9,13 @@ services --enabled=acpid,alsa,atd,avahi-daemon,prefdm,irqbalance,mandi,dbus,netf
 services --disabled=sshd,pptp,pppoe,ntpd,iptables,ip6tables,shorewall,nfs-server,mysqld,abrtd,mysql,postfix,cups
 
 repo --name=Main       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/main/release
-repo --name=Main       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/main/updates
+repo --name=MainU       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/main/updates
 
 repo --name=Non-Free       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/non-free/release
-repo --name=Non-Free       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/non-free/updates
+repo --name=Non-FreeU       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/non-free/updates
 
 repo --name=Restricted	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#//restricted/release
-repo --name=Restricted  --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#//restricted/updates
+repo --name=RestrictedU  --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#//restricted/updates
 
 
 %packages
