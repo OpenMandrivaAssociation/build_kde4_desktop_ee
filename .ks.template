@@ -88,6 +88,10 @@ popd
 systemctl enable NetworkManager.service
 systemctl enable getty@.service
 
+### TEMP WORKAROUND FOR MIMEAPPS LIST###
+echo DELETING MIMEAPPS
+rm -f /usr/share/applications/mimeapps.list
+###
 
 # default background
 pushd /usr/share/mdk/backgrounds/
