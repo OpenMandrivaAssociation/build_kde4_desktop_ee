@@ -17,7 +17,7 @@ repo --name=Restricted	--baseurl=http://abf.rosalinux.ru/downloads/cooker/reposi
 
 %packages
 #%include #PATH#/#ARCH#.mini.lst
-%include #PATH#/#ARCH#kde.lst
+%include #PATH#/#ARCH#.lst
 #%include #PATH#/#ARCH#kde-server.lst
 
 %end
