@@ -8,19 +8,16 @@ part / --size 8692
 services --enabled=acpid,alsa,atd,avahi-daemon,prefdm,irqbalance,mandi,dbus,netfs,network,network-up,partmon,resolvconf,rpcbind,rsyslog,sound,udev-post,mandrake_everytime,crond
 services --disabled=sshd,pptp,pppoe,ntpd,iptables,ip6tables,shorewall,nfs-server,mysqld,abrtd,mysql,postfix,cups
 
-repo --name=Main       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/main/release
-repo --name=MainU       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/main/updates
+repo --name=Main       --baseurl=http://abf.rosalinux.ru/downloads/cooker/repository/#ARCH#/main/release
 
-repo --name=Non-Free       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/non-free/release
-repo --name=Non-FreeU       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#/non-free/updates
+repo --name=Non-Free       --baseurl=http://abf.rosalinux.ru/downloads/cooker/repository/#ARCH#/non-free/release
 
-repo --name=Restricted	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#//restricted/release
-repo --name=RestrictedU  --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/#ARCH#//restricted/updates
+repo --name=Restricted	--baseurl=http://abf.rosalinux.ru/downloads/cooker/repository/#ARCH#/restricted/release
 
 
 %packages
 #%include #PATH#/#ARCH#.mini.lst
-%include #PATH#/#ARCH#.lst
+%include #PATH#/#ARCH#kde.lst
 #%include #PATH#/#ARCH#kde-server.lst
 
 %end

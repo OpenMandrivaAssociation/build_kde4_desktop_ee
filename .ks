@@ -8,17 +8,16 @@ part / --size 8692
 services --enabled=acpid,alsa,atd,avahi-daemon,prefdm,irqbalance,mandi,dbus,netfs,network,network-up,partmon,resolvconf,rpcbind,rsyslog,sound,udev-post,mandrake_everytime,crond
 services --disabled=sshd,pptp,pppoe,ntpd,iptables,ip6tables,shorewall,nfs-server,mysqld,abrtd,mysql,postfix,cups
 
-repo --name=Main       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/x86_64/main/release
+repo --name=Main       --baseurl=http://abf.rosalinux.ru/downloads/cooker/repository/x86_64/main/release
 
-repo --name=Non-Free       --baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/x86_64/non-free/release
+repo --name=Non-Free       --baseurl=http://abf.rosalinux.ru/downloads/cooker/repository/x86_64/non-free/release
 
-#repo --name=Restricted	--baseurl=http://abf.rosalinux.ru/downloads/rosa2012.1/repository/x86_64//restricted/release
+repo --name=Restricted	--baseurl=http://abf.rosalinux.ru/downloads/cooker/repository/x86_64/restricted/release
 
-#repo --name=TEST --baseurl=http://abf.rosalinux.ru/downloads/kernels_36x_personal/repository/rosa2012.1/x86_64/main/release/
 
 %packages
-%include .///x86_64.mini.lst
-#%include .///x86_64.lst
+#%include .///x86_64.mini.lst
+%include .///x86_64kde.lst
 #%include .///x86_64kde-server.lst
 
 %end
@@ -86,6 +85,10 @@ popd
 systemctl enable NetworkManager.service
 systemctl enable getty@.service
 
+### TEMP WORKAROUND FOR MIMEAPPS LIST###
+echo DELETING MIMEAPPS
+rm -f /usr/share/applications/mimeapps.list
+###
 
 # default background
 pushd /usr/share/mdk/backgrounds/
@@ -113,32 +116,34 @@ popd
 # DKMS
 #
 
-# echo
-# echo
-# echo Rebuilding DKMS drivers
-# echo
-# echo
+echo
+echo
+echo Rebuilding DKMS drivers
+echo
+echo
 
-# export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 #build arch import for vboxadditions dkms + flash workaround###
 
-# export BUILD_TARGET_ARCH=x86
-# XXX=`file /bin/rpm |grep -c x86-64`                                                                                                                                                                                
-# if [ "$XXX" = "1" ];  then  
-# export BUILD_TARGET_ARCH=amd64
-# fi
+export BUILD_TARGET_ARCH=x86
+XXX=`file /bin/rpm |grep -c x86-64`
+if [ "$XXX" = "1" ];  then
+export BUILD_TARGET_ARCH=amd64
+fi
 
-# echo " ###DKMS BUILD### "                                                                                                                                                                                          
-# kernel_ver=`ls /boot | /bin/grep vmlinuz | /bin/sed 's/vmlinuz-//'`   
-# for module in broadcom-wl vboxadditions r8192se; do                                                                                                                              
-# module_version=`rpm --qf '%{VERSION}\n' -q dkms-$module`                                                                                                                                                           
-# module_release=`rpm --qf '%{RELEASE}\n' -q dkms-$module`                                                                                                                                                           
-# /usr/sbin/dkms -k $kernel_ver -a x86_64 --rpm_safe_upgrade add -m $module -v $module_version-$module_release
-#/usr/sbin/dkms -k $kernel_ver -a x86_64 --rpm_safe_upgrade build -m $module -v $module_version- $module_release                                                                                  
-#/usr/sbin/dkms -k $kernel_ver -a x86_64 --rpm_safe_upgrade install -m $module -v $module_version-$module_release --force                                                                        
-#done                                                                                                                                                                                                               
-#echo "END OF IT" 
+echo " ###DKMS BUILD### "
+kernel_ver=`ls /boot | /bin/grep vmlinuz | /bin/sed 's/vmlinuz-//' |head -1`
+for module in vboxadditions; do
+module_version=`rpm --qf '%{VERSION}\n' -q dkms-$module`
+module_release=`rpm --qf '%{RELEASE}\n' -q dkms-$module`
+su --session-command="/usr/sbin/dkms -k $kernel_ver -a x86_64 --rpm_safe_upgrade add -m $module -v $module_version-$module_release" root
+su --session-command="/usr/sbin/dkms -k $kernel_ver -a x86_64 --rpm_safe_upgrade build -m $module -v $module_version-$module_release" root
+su --session-command="/usr/sbin/dkms -k $kernel_ver -a x86_64 --rpm_safe_upgrade install -m $module -v $module_version-$module_release --force" root
+done
+
+echo "END OF IT".
+
 #/bin/bash
 #
 # kernel
@@ -201,6 +206,14 @@ done
 #    mkdir -p $INSTALL_ROOT/var/run/serverinstall
 #    cp .///extraconfig/squashfsx86_64.img $INSTALL_ROOT/var/run/serverinstall/squashfs.img
 
+#workaround for flash-plugin
+cp -rfT /etc/resolv.conf $INSTALL_ROOT/etc/resolv.conf
+/usr/sbin/urpmi.removemedia -a
+/usr/sbin/urpmi.addmedia --distrib  --all-media http://abf.rosalinux.ru/downloads/rosa2012.1/repository/x86_64/
+/usr/sbin/urpmi --root $INSTALL_ROOT flash-player-plugin
+echo > $INSTALL_ROOT/etc/resolv.conf
+
+#end of it
 	#delete icon cache
 #    rm -f $INSTALL_ROOT/usr/share/icons/gnome/icon-theme.cache
 #   rm -f $INSTALL_ROOT/usr/share/icons/nuoveXT2/icon-theme.cache

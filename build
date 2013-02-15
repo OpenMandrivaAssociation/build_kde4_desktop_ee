@@ -2,8 +2,8 @@
 losetup -a
 losetup -d /dev/loop*
 
-ARCHS="i586 x86_64"
-#ARCHS="x86_64"
+#ARCHS="i586 x86_64"
+ARCHS="x86_64"
 #ARCHS="i586"
 
 #if [ ! "$UID" = "0" ]; then#
