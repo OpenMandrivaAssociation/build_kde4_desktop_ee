@@ -181,7 +181,6 @@ info
 info-install
 initscripts
 iproute2
-ipset
 iptables
 iputils
 iso-codes
